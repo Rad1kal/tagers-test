@@ -17,7 +17,10 @@ import BreadCrumbs from "@/components/BreadCrumbs.vue";
 import rawItemsData from "@/data/items.json"
 import sortMaterial from '@/data/materials.json'
 
+import type {IProduct} from "@/interfaces";
+
 import {ref, watch} from "vue";
+
 
 const activeCostSort = ref('0');
 const activeMaterialFilter = ref('0');
@@ -64,8 +67,9 @@ const sortPrice = [
     "name": "Цена по убыванию"
   }
 ];
+console.log(rawItemsData);
 
-const data = ref([...rawItemsData]);
+const data = ref<IProduct[]>([...rawItemsData]);
 
 </script>
 

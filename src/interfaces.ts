@@ -14,5 +14,5 @@ export interface IProduct {
     image: {
       url: string
     },
-    material: string
+    material: number
 }

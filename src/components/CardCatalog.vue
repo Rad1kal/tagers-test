@@ -8,9 +8,10 @@
 
 
 import CardInCatalog from "@/controls/CardInCatalog.vue";
+import type {IProduct} from "@/interfaces";
 
 const props = defineProps<{
-  cards?: object[]
+  cards?: IProduct[]
 }>()
 </script>
 

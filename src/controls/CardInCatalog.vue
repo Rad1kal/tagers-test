@@ -11,9 +11,9 @@
       <div class="cards-catalog__card-bottom-selling-container">
         <h4 class="cards-catalog__card-price">
           <span v-if="cardData.price.old_price" class="cards-catalog__card-price_old">
-            {{ Number.parseInt(cardData.price.old_price) + '₽' }}
+            {{ Math.floor(cardData.price.old_price) + '₽' }}
           </span>
-          {{ cardData.price.current_price ? Number.parseInt(cardData.price.current_price) : '' }}₽
+          {{ cardData.price.current_price ? Math.floor(cardData.price.current_price) : '' }}₽
         </h4>
         <div class="cards-catalog__card-selling-controls">
           <div class="cards-catalog__card-selling-control" :id="cardData.id" @click="toggleCart">
@@ -31,7 +31,7 @@
 
 <script setup lang="ts">
 import { ref, watch } from 'vue';
-import { IProduct } from '@/interfaces';
+import type { IProduct } from "@/interfaces";
 import { useStore } from '@/utils/utils';
 
 const props = defineProps<{ cardData: IProduct }>();

@@ -1,0 +1,31 @@
+@font-face {
+  font-family: 'SF-Pro-Display';
+  src: url('/src/assets/fonts/SF-Pro-Display-Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'SF-UI-Text';
+  src: url('/src/assets/fonts/SF-UI-Text-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+.invisible {
+  opacity: 0;
+}
+
+.hide {
+  display: none;
+}
+
+.active>.router-link-active {
+  color: black;
+}

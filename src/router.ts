@@ -1,5 +1,5 @@
 // src/router/index.ts
-import { createRouter, createWebHistory } from 'vue-router';
+import {createRouter, createWebHashHistory} from 'vue-router';
 
 import Catalog from '@/views/Catalog.vue';
 import Home from "@/views/Home.vue";
@@ -11,17 +11,10 @@ const routes= [
           { path: 'shelving_system_kits/', name: 'Комплекты стеллажных систем', component: Catalog },
         ]},
   ]},
-
-
-  // {
-  //   path: '/static/:fileName',
-  //   name: 'StaticFile',
-  //   component: () => import('../views/StaticFile.vue'), // Создайте этот компонент
-  // },
 ];
 
 const router = createRouter({
-  history: createWebHistory(),
+  history: createWebHashHistory(),
   routes,
 });
 

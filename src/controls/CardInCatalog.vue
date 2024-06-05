@@ -30,12 +30,11 @@
 </template>
 
 <script setup lang="ts">
-import { ref, watch } from 'vue';
+import {onMounted, ref, watch} from 'vue';
 import type { IProduct } from "@/interfaces";
 import { useStore } from '@/utils/utils';
 
 const props = defineProps<{ cardData: IProduct }>();
-const baseURL = import.meta.env.BASE_URL
 
 const { addTo, removeFrom, favorites, cart } = useStore();
 
@@ -73,6 +72,7 @@ watch(cart, () => {
 watch(favorites, () => {
   inFavorite.value = !!favorites.value.find(p => p.id === props.cardData.id);
 });
+
 </script>
 
 <style>
